@@ -1,7 +1,15 @@
 @test "should succeed" {
-   echo "Hello, bats!"
+   run echo "Hello, bats!"
+   assert_success
+}
+
+load 'libs/bats-assert/load'
+
+setup() {
+   source getopt_long.sh
 }
 
 @test "should fail" {
-   /bin/false
+   run /bin/false
+   assert_failure
 }
