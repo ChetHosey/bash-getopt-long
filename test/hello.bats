@@ -6,6 +6,8 @@
 load '../node_modules/bats-assert/load'
 
 setup() {
+   run ls -l
+   run pwd
    source getopt_long.sh
 }
 
