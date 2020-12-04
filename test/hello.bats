@@ -3,7 +3,7 @@
    assert_success
 }
 
-load 'libs/bats-assert/load'
+load '../node_modules/bats-assert/load'
 
 setup() {
    source getopt_long.sh
