@@ -6,8 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
-      - run: npm install -g bats bats-assert bats-support
-      - run: find / -name bats-assert
+      - run: npm install --verbose bats bats-assert bats-support
       - run: which bats
       - run: pwd
       - run: bats test/*.bats
