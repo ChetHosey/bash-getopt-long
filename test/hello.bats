@@ -3,7 +3,7 @@
    assert_success
 }
 
-load '../node_modules/bats-assert/load'
+load '../node_modules/bats-assert/load.bash'
 
 setup() {
    run ls -l
