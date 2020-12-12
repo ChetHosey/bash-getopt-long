@@ -35,8 +35,19 @@ setup() {
    assert_output 'Warning: no argument supplied for --required-argument'
 }
 
-@test "required argument returns correct option name and value" {
+@test "required argument returns correct option name and value when equals sign is present" {
    _gol_reset --required-argument=present
+
+   add_long_option "required-argument" $GETOPT_LONG_ARG_REQUIRED
+
+   getopt_long option value
+
+   assert_equal "$option" 'required-argument'
+   assert_equal "$value" 'present'
+}
+
+@test "required argument returns correct option name and value when space separates option and argument" {
+   _gol_reset --required-argument present
 
    add_long_option "required-argument" $GETOPT_LONG_ARG_REQUIRED
 
